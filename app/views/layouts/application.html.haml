@@ -1,0 +1,38 @@
+!!!
+%html
+%head
+  = stylesheet_link_tag   "application"
+  = stylesheet_link_tag   "color"
+  = stylesheet_link_tag   "layout"
+  = stylesheet_link_tag   "text"
+  = javascript_include_tag "application"
+  = csrf_meta_tags
+  
+
+%body
+
+  #header
+
+    .user.actions
+      - if user_signed_in? then
+        = link_to current_user.email, edit_user_registration_path
+        |
+        = link_to 'logout', destroy_user_session_path, :method => :delete
+      - else
+        = link_to 'Sign Up', new_user_registration_path
+        |
+        = link_to 'Login', new_user_session_path	
+
+    %h1 Welcome To The Exoctic Sneaker Life!
+    %p A place to buy and sell 100% authentic exoctic sneakers 
+
+
+  #sidebar 
+    .sidebar_content
+      Previous Post
+	      
+  .content    
+    = yield
+		
+  #footer
+    Made by Tha 10man

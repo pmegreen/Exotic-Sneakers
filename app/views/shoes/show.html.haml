@@ -1,0 +1,11 @@
+%p#notice= notice
+
+
+= link_to 'Edit', edit_shoe_path(@shoe)
+\|
+= link_to 'Back', shoes_path
+
+= image_tag @shoe.shoe images.url
+= image_tag @shoe.shoe images.url(:medium)
+= image_tag @shoe.shoe images.url(:thumb)
+

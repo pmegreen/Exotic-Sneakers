@@ -1,0 +1,17 @@
+%h1 Exotic Kicks For Sale
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @shoes.each do |shoe|
+    %tr
+      %td= link_to 'Show', shoe
+      %td= link_to 'Edit', edit_shoe_path(shoe)
+      %td= link_to 'Delete Shoe', shoe, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'Want To Sell Your Exoctic Kicks?', new_shoe_path

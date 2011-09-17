@@ -1,0 +1,13 @@
+%h1 Sell Your Exoctics!
+%h2 Please fill out all information below
+
+//%form_for :shoe, :html => {:multipart => true} do |form|
+//%form.file_field :shoe_images
+
+
+// render :partial => 'form', :locals => {:shoe => @shoe}
+
+= render 'form'
+= link_to 'Back', shoes_path
+
+

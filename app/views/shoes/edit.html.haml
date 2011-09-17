@@ -1,0 +1,11 @@
+%h1 Editing shoe
+
+= render 'form'
+
+= link_to 'Show', @shoe
+\|
+= link_to 'Back', shoes_path
+
+%form_for :shoe, :html => {:multipart => true} do |form|
+    form.file_field :shoe images
+
