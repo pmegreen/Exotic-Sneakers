@@ -1,0 +1,23 @@
+%h1 Exotic Sneakers For Sale
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @shoes.each do |shoe|
+    %tr
+      %td= shoe.name
+      %td= shoe.brand
+      %td= shoe.size
+      %td= shoe.condition
+      %td= number_to_currency shoe.price
+      %td= image_tag shoe.image.url(:medium)
+      %td= link_to 'View Details', sell_shoe_path(shoe)
+      %td= link_to 'Edit', edit_sell_shoe_path(shoe)
+      %td= link_to 'Delete From Market', sell_shoe_path(shoe), :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'Sell More Exotic Sneakers', new_sell_shoe_path

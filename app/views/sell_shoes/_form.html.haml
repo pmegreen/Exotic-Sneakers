@@ -1,0 +1,33 @@
+= form_for(@shoe,:url => sell_shoes_path, :html => {:multipart => true}) do |f|
+  -if @shoe.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@shoe.errors.count, "error")} prohibited this shoe from being saved:"
+      %ul
+        - @shoe.errors.full_messages.each do |msg|
+          %li= msg
+          
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :brand
+    = f.text_field :brand
+  .field
+    = f.label :size
+    = f.text_field :size
+  .field
+    = f.label :price
+    = f.text_field :price
+  .field
+    = f.label :condition
+    = f.text_field :condition
+  .field
+    = f.label :description
+    = f.text_field :description
+  .field
+    = f.file_field :image
+    
+  .actions
+    %div
+    = f.submit 'submit'
+

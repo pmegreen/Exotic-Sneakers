@@ -1,0 +1,16 @@
+%h1 Exotic Sneakers For Sale
+
+%ul.shopping_grid
+  - @shoes.each do |shoe|
+    %li 
+      = link_to(buy_shoe_path(shoe)) do
+        %p
+          = shoe.name
+        %p
+          = number_to_currency shoe.price
+        = image_tag shoe.image.url(:medium)
+
+
+= link_to 'Want To Sell Your Exoctic Kicks?', new_sell_shoe_path
+
+

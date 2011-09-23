@@ -1,0 +1,18 @@
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @shoes.each do |shoe|
+    %tr
+      %td= shoe.name
+      %td= shoe.brand
+      %td= shoe.size
+      %td= shoe.condition
+      %td= number_to_currency shoe.price
+      %td= image_tag shoe.image.url(:medium)
+      %td= link_to 'View Details', buy_shoe_path(shoe)
+
+%br
+

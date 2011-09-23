@@ -1,4 +1,5 @@
 !!!
+
 %html
 %head
   = stylesheet_link_tag   "application"
@@ -12,7 +13,8 @@
 %body
 
   #header
-
+    #slogan
+      %h2 A simple way to buy exotic sneakers
     .user.actions
       - if user_signed_in? then
         = link_to current_user.email, edit_user_registration_path
@@ -21,18 +23,23 @@
       - else
         = link_to 'Sign Up', new_user_registration_path
         |
-        = link_to 'Login', new_user_session_path	
-
-    %h1 Welcome To The Exoctic Sneaker Life!
-    %p A place to buy and sell 100% authentic exoctic sneakers 
-
-
+        = link_to 'Login', new_user_session_path
+        
+        
+  #container
+    #left
+    #right
+      %h3 Welcome to the exotic sneaker life!
+    
+    
   #sidebar 
     .sidebar_content
       Previous Post
 	      
   .content    
     = yield
+    
+    
 		
   #footer
     Made by Tha 10man

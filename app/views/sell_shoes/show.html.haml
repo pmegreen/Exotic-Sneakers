@@ -1,0 +1,13 @@
+%p#notice= notice
+
+
+= link_to 'Edit', edit_sell_shoe_path(@shoe)
+\|
+= link_to 'Back', sell_shoes_path
+
+= number_to_currency @shoe.price
+= image_tag @shoe.image.url
+= image_tag @shoe.image.url(:medium)
+= image_tag @shoe.image.url(:thumb)
+
+
