@@ -3,43 +3,53 @@
 %html
 %head
   = stylesheet_link_tag   "application"
-  = stylesheet_link_tag   "color"
   = stylesheet_link_tag   "layout"
   = stylesheet_link_tag   "text"
   = javascript_include_tag "application"
   = csrf_meta_tags
-  
 
-%body
+  #main
+    #header
+      #slogan
+        %h4 A simple way to buy exotic sneakers
+      #menuBar 
+        = link_to 'Home', posts_path
+        = link_to 'Buy Shoes', buy_shoes_path
+        = link_to 'Sell Shoes', new_sell_shoe_path
+        = link_to 'Release Dates', countdowns_path
+        = link_to 'Contact', new_sell_shoe_path
+        = link_to 'Disclaimer', new_sell_shoe_path
+        
+      #login
+        .user.actions
+        - if user_signed_in? then
+          = link_to current_user.email, edit_user_registration_path
+          |
+          = link_to 'logout', destroy_user_session_path, :method => :delete
+        - else
+          = link_to 'Sign Up', new_user_registration_path
+          |
+          = link_to 'Login', new_user_session_path
+          
+          
+    #container
+      #left
+      #right
+        %h3 Welcome to the exotic sneaker life!
+      
+    #sidecontainer 
+      #sidebar 
+        .sidebar_content
+          Previous Post
+	        
+#body
+  #main
+    #content
+      .content    
+        = yield
 
-  #header
-    #slogan
-      %h2 A simple way to buy exotic sneakers
-    .user.actions
-      - if user_signed_in? then
-        = link_to current_user.email, edit_user_registration_path
-        |
-        = link_to 'logout', destroy_user_session_path, :method => :delete
-      - else
-        = link_to 'Sign Up', new_user_registration_path
-        |
-        = link_to 'Login', new_user_session_path
-        
-        
-  #container
-    #left
-    #right
-      %h3 Welcome to the exotic sneaker life!
-    
-    
-  #sidebar 
-    .sidebar_content
-      Previous Post
-	      
-  .content    
-    = yield
-    
-    
-		
-  #footer
-    Made by Tha 10man
+
+      
+
+    #footer
+      

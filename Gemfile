@@ -6,6 +6,8 @@ gem 'rails', '3.1.0'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 
+gem 'hpricot'
+gem 'dynamic_menu', '~> 2.0.0'    #menu builder in rails
 gem 'sqlite3'		#database	
 gem 'devise'		#authentication
 gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"

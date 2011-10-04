@@ -1,4 +1,6 @@
 Sneakerlife::Application.routes.draw do
+  resources :countdowns
+
   resources :checkout
   resources :sell_shoes
   resources :buy_shoes

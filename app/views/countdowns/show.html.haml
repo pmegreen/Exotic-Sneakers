@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @countdown.name
+%p
+  %b Title:
+  = @countdown.title
+%p
+  %b Content:
+  = @countdown.content
+
+= link_to 'Edit', edit_countdown_path(@countdown)
+\|
+= link_to 'Back', countdowns_path

@@ -1,0 +1,10 @@
+require 'dynamic_menu'
+
+module DynamicMenu
+   class Engine < Rails::Engine
+    initializer "dynamic_menu.menu_items" do |app|
+    ActionController::Base.send :include, DynamicMenu::MenuItems
+   end
+ end
+end
+
