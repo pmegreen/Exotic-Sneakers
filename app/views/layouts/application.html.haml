@@ -14,14 +14,19 @@
         %h4 A simple way to buy exotic sneakers
       #menuBar 
         = link_to 'Home', posts_path
+        /
         = link_to 'Buy Shoes', buy_shoes_path
+        /
         = link_to 'Sell Shoes', new_sell_shoe_path
+        /
         = link_to 'Release Dates', countdowns_path
+        /
         = link_to 'Contact', new_sell_shoe_path
+        /
         = link_to 'Disclaimer', new_sell_shoe_path
         
       #login
-        .user.actions
+      .user.actions
         - if user_signed_in? then
           = link_to current_user.email, edit_user_registration_path
           |
@@ -30,7 +35,9 @@
           = link_to 'Sign Up', new_user_registration_path
           |
           = link_to 'Login', new_user_session_path
+        
           
+                           
           
     #container
       #left

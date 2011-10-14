@@ -1,0 +1,13 @@
+%h1 New registration
+%h2 Please fill out all information below
+
+//%form_for :registration_path(registration), :html => {:multipart => true} do |form|
+//%form.file_field :registration_images
+//%form.text_field :registration_name
+
+
+// render :partial => 'form', :locals => {:registration_path => @registration}registration_path(registration)
+
+= render 'form'
+
+= link_to 'Back', registrations_path

@@ -1,0 +1,13 @@
+= form_for(@registration,:url => new_registration_path, :html => {:multipart => true}) do |f|
+  -if @registration.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@registration.errors.count, "error")} prohibited this registration from being saved:"
+      %ul
+        - @registration.errors.full_messages.each do |msg|
+          %li= msg
+          
+
+
+  .actions
+    %div
+    = f.submit 'submit'
